@@ -1,0 +1,33 @@
+CREATE TABLE pro_shop (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, aisle INTEGER, price INTEGER);
+INSERT INTO pro_shop VALUES (1, "Nike Pros", 25, 1, 40);
+INSERT INTO pro_shop VALUES (2, "Nfinity shoes", 50, 2, 100);
+INSERT INTO pro_shop VALUES (3, "Butterfly shorts", 70, 3, 50);
+INSERT INTO pro_shop VALUES (4, "KT Tape", 150, 4, 15);
+INSERT INTO pro_shop VALUES (5, "Stunt Stand", 30, 5, 225);
+INSERT INTO pro_shop VALUES (6, "Rebel practice wear", 50, 6, 80);
+INSERT INTO pro_shop VALUES (7, "Uniform top", 300, 7, 265);
+INSERT INTO pro_shop VALUES (8, "Uniform skirt", 300, 8, 195);
+INSERT INTO pro_shop VALUES (9, "Tennis skirt", 60, 9, 55);
+INSERT INTO pro_shop VALUES (10, "Mini Fan", 75, 10, 20);
+INSERT INTO pro_shop VALUES (11, "Car sticker", 115, 11, 30);
+INSERT INTO pro_shop VALUES (12, "Water Bottle", 75, 12, 35);
+INSERT INTO pro_shop VALUES (13, "Portable charger", 25, 13, 30);
+INSERT INTO pro_shop VALUES (14, "Ankle weights", 40, 14, 25);
+INSERT INTO pro_shop VALUES (15, "Sports bra", 125, 15, 60);
+SELECT * FROM pro_shop WHERE quantity>0 ORDER BY quantity;
+SELECT *, SUM(quantity) FROM pro_shop;
+
+--display the database ordered by price. 
+SELECT * FROM store
+ORDER BY price desc; 
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section='bulk'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5; 
